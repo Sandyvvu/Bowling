@@ -1,5 +1,4 @@
 package dk.eaaa;
-import java.util.ArrayList;
 
 public class BowlingGame {
 
@@ -16,7 +15,7 @@ public class BowlingGame {
 	public void roll(int pins) throws Exception {
 		if (firstRollInFrame) {
 			frames[currentFrame].rollFirst(pins);
-			if (pins == 10) { // Strike
+			if (pins == 12) { // Strike
 				newFrame();
 			} else {
 				firstRollInFrame = false;
@@ -36,14 +35,14 @@ public class BowlingGame {
 
 	public int getScore() {
 		int score = 0;
-		
+
 		for (int i = 0; i < frames.length; i++) {
 			score += frames[i].getScore();
 			if (frames[i].isSpare()) {
-				score += frames[i+1].getFirstRoll();
+				score += frames[i + 1].getFirstRoll();
 			}
 			if (frames[i].isStrike()) {
-				score += frames[i+1].getScore();
+				score += frames[i + 1].getScore();
 			}
 		}
 		return score;
