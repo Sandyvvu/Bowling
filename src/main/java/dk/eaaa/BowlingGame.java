@@ -15,7 +15,7 @@ public class BowlingGame {
 	public void roll(int pins) throws Exception {
 		if (firstRollInFrame) {
 			frames[currentFrame].rollFirst(pins);
-			if (pins == 12) { // Strike
+			if (pins == 10) { // Strike
 				newFrame();
 			} else {
 				firstRollInFrame = false;
