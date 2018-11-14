@@ -25,3 +25,6 @@ jobs:
       - checkout
 
       - run: gradle dependencies
+        
+      # run tests!
+      - run: gradle src/test/java/dk/eaaa
